@@ -1,8 +1,13 @@
 import sqlite3
-
+import logging
+import sys
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 
+logging.basicConfig(stream=sys.stdout, 
+                    level=logging.DEBUG, 
+                    format='%(levelname)s:%(name)s:%(asctime)s, %(message)s')
+# logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 db_connection_count = 0
 
 # Function to get a database connection.
@@ -40,14 +45,16 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-      return render_template('404.html'), 404
+        app.logger.info('Article not found!')
+        return render_template('404.html'), 404
     else:
-      return render_template('post.html', post=post)
+        app.logger.info(f'Article "{post[2]}" retrieved!')
+        return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
-    app.logger.info('About Us retrieved')
+    app.logger.info('Page "About Us" retrieved!')
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -65,6 +72,8 @@ def create():
                          (title, content))
             connection.commit()
             connection.close()
+
+            app.logger.info(f'Article "{title}" created!')
 
             return redirect(url_for('index'))
 

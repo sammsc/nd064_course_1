@@ -1,11 +1,43 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+docker build -t techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+docker logs ea8275a45883c76412999d852c7ceb7190ad526e25ebfe12c4038c0186fde0c3
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug:2022-12-07 23:38:05,103,  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug:2022-12-07 23:38:05,104,  * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:2022-12-07 23:39:29,407, 172.17.0.1 - - [07/Dec/2022 23:39:29] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:39:29,423, 172.17.0.1 - - [07/Dec/2022 23:39:29] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:39:29,435, 172.17.0.1 - - [07/Dec/2022 23:39:29] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:app:2022-12-07 23:39:45,135, Page "About Us" retrieved!
+INFO:werkzeug:2022-12-07 23:39:45,140, 172.17.0.1 - - [07/Dec/2022 23:39:45] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:39:45,160, 172.17.0.1 - - [07/Dec/2022 23:39:45] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-12-07 23:39:51,831, Article "Kubernetes v1.20 Release Notes" retrieved!
+INFO:werkzeug:2022-12-07 23:39:51,837, 172.17.0.1 - - [07/Dec/2022 23:39:51] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:39:51,858, 172.17.0.1 - - [07/Dec/2022 23:39:51] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2022-12-07 23:39:54,922, 172.17.0.1 - - [07/Dec/2022 23:39:54] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:39:54,944, 172.17.0.1 - - [07/Dec/2022 23:39:54] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2022-12-07 23:50:10,758, 172.17.0.1 - - [07/Dec/2022 23:50:10] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:50:22,492, 172.17.0.1 - - [07/Dec/2022 23:50:22] "GET /metrics HTTP/1.1" 200 -
+INFO:app:2022-12-07 23:50:48,651, Page "About Us" retrieved!
+INFO:werkzeug:2022-12-07 23:50:48,652, 172.17.0.1 - - [07/Dec/2022 23:50:48] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:50:48,665, 172.17.0.1 - - [07/Dec/2022 23:50:48] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:2022-12-07 23:50:59,135, 172.17.0.1 - - [07/Dec/2022 23:50:59] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:50:59,150, 172.17.0.1 - - [07/Dec/2022 23:50:59] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-12-07 23:51:13,376, Article "test" created!
+INFO:werkzeug:2022-12-07 23:51:13,377, 172.17.0.1 - - [07/Dec/2022 23:51:13] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:2022-12-07 23:51:13,382, 172.17.0.1 - - [07/Dec/2022 23:51:13] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:51:13,402, 172.17.0.1 - - [07/Dec/2022 23:51:13] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:2022-12-07 23:51:18,367, Article "test" retrieved!
+INFO:werkzeug:2022-12-07 23:51:18,368, 172.17.0.1 - - [07/Dec/2022 23:51:18] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:2022-12-07 23:51:18,391, 172.17.0.1 - - [07/Dec/2022 23:51:18] "GET /static/css/main.css HTTP/1.1" 304 -

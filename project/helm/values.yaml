@@ -11,7 +11,7 @@ service:
 
 ## define the image to execute with the Deployment 
 image:
-  repository: techtrends
+  repository: neuroit/techtrends
   tag: latest
   pullPolicy: IfNotPresent
 
